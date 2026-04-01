@@ -12,7 +12,7 @@ body{background:#0f172a;color:#fff;}
 
 header{position:fixed;width:100%;top:0;left:0;padding:15px 8%;display:flex;align-items:center;background:rgba(0,0,0,0.4);backdrop-filter:blur(10px);z-index:1000;}
 header nav{display:flex;align-items:center;width:100%;}
-header nav img{height:40px;width:auto;margin-right:auto;} /* FIXED IMAGE SIZE */
+header nav img{height:80px;width:auto;margin-right:auto;} /* FIXED IMAGE SIZE */
 header nav a{margin-left:25px;text-decoration:none;color:#fff;font-weight:500;transition:0.3s;}
 header nav a:hover{color:#f97316;}
 
@@ -24,13 +24,14 @@ section{padding:120px 8% 80px;}
 .btn{margin-top:20px;display:inline-block;padding:12px 24px;background:#f97316;color:#fff;text-decoration:none;border-radius:6px;transition:0.3s;}
 .btn:hover{transform:translateY(-3px);}
 
-/* TOGGLE BEFORE/AFTER */
-.toggle-container{max-width:900px;margin:40px auto;text-align:center;}
-.toggle-switch{display:inline-flex;background:#1e293b;border-radius:30px;overflow:hidden;margin-bottom:15px;}
-.toggle-switch button{padding:10px 20px;border:none;background:transparent;color:#fff;cursor:pointer;transition:0.3s;}
-.toggle-switch button.active{background:#f97316;}
-.toggle-image img{width:100%;border-radius:12px;}
-
+/* TOGGLE STYLE */
+.toggle-container{max-width:900px;margin:50px auto;}
+.toggle-switch{display:flex;border-radius:30px;overflow:hidden;background:#1e293b;width:200px;margin-bottom:15px;}
+.toggle-switch button{flex:1;padding:10px;border:none;cursor:pointer;font-weight:600;transition:0.3s;}
+.toggle-switch button.active-before{background:#fff;color:#000;}
+.toggle-switch button.active-after{background:#f97316;color:#fff;}
+.toggle-image img{width:100%;border-radius:12px;transition:0.4s ease;}
+    
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
 .card{position:relative;overflow:hidden;border-radius:10px;transform:translateY(40px);opacity:0;transition:all 0.6s ease;}
 .card img{width:100%;height:100%;object-fit:cover;display:block;}
@@ -73,14 +74,34 @@ footer{text-align:center;padding:20px;background:#020617;color:#aaa;}
 <section id="gallery">
 <h2>Project Gallery</h2>
 
-<!-- TOGGLE BEFORE/AFTER -->
+<!-- MULTIPLE TOGGLES -->
 <div class="toggle-container">
     <div class="toggle-switch">
-        <button id="beforeBtn" class="active">Before</button>
-        <button id="afterBtn">After</button>
+        <button class="before active-before">Before</button>
+        <button class="after">After</button>
     </div>
     <div class="toggle-image">
-        <img id="projectImage" src="https://picsum.photos/900/500?before" alt="Project">
+        <img src="https://picsum.photos/900/500?1" data-before="https://picsum.photos/900/500?1" data-after="https://picsum.photos/900/500?11">
+    </div>
+</div>
+
+<div class="toggle-container">
+    <div class="toggle-switch">
+        <button class="before active-before">Before</button>
+        <button class="after">After</button>
+    </div>
+    <div class="toggle-image">
+        <img src="https://picsum.photos/900/500?2" data-before="https://picsum.photos/900/500?2" data-after="https://picsum.photos/900/500?22">
+    </div>
+</div>
+
+<div class="toggle-container">
+    <div class="toggle-switch">
+        <button class="before active-before">Before</button>
+        <button class="after">After</button>
+    </div>
+    <div class="toggle-image">
+        <img src="https://picsum.photos/900/500?3" data-before="https://picsum.photos/900/500?3" data-after="https://picsum.photos/900/500?33">
     </div>
 </div>
 
